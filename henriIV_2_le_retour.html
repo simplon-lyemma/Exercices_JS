@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Henri IV 2 le retour</title>
+  </head>
+  <body>
+
+
+      <script type="text/javascript">
+      var questions = [
+"couleur du cheval blanc d'henri IV?",
+"combien de 7 nains?",
+"le petit poucet est il grand ?",
+"de quel couleur est la cape du chaperon rouge ?"
+];
+
+var reponses = [ 'blanc', '7', 'non', 'rouge'];
+
+var score = 0;
+
+function afficheQuestion(){
+if(questions.length === 0){
+alert('vous avez terminé le questionnaire. Votre score ' + score);
+return;
+}
+
+        var hasard = Math.floor( Math.random() * questions.length );
+        var question = questions[hasard];
+        var reponse = prompt(question);
+        console.log('reponse', reponse);
+        if(reponse === reponses[hasard]){
+        score++;
+        questions.splice(hasard,1);
+        reponses.splice(hasard,1);
+        alert('bravo : votre score ' + score);
+        afficheQuestion();
+        } else {
+        alert('Faux : vous avez perdu. Votre score : ' + score);
+        }
+
+        console.log('fin de la function');
+        }
+
+        afficheQuestion();
+
+
+
+
+      </script>
+
+  </body>
+</html>

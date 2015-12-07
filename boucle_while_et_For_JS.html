@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>boucle WHILE et boucle FOR</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var compteur = 0 ;
+
+// tant que compteur < 5
+while( compteur < 5 ){
+// attention de bien incrémenté compteur dans ce cas, sinon : boucle infinie
+compteur ++; // compteur + 1 on augmente de 1
+// effectue ces opérations
+console.log("compteur while " + compteur);
+
+
+}
+
+
+/*
+* boucles for : permet d'effectuer un bloc d'instructions en lui passant une suite de nombre
+*/
+
+// effectue un bloc d'instructions durant une séquence définie par une valeur de départ, une valeur d'arrivée et une valeur d'incrémentation
+// avec une variable compteur, initialement égale à 0,  tant qu'elle est inférieure à 5, en augmentant de 1 à chaque étape
+for ( var compteur = 0 ; compteur < 5 ; compteur ++ ){
+// bloc d'instructions
+console.log("compteur " + compteur);
+// ...
+}
+
+// équivaut à
+console.log("compteur " + 0);
+console.log("compteur " + 1);
+console.log("compteur " + 2);
+console.log("compteur " + 3);
+console.log("compteur " + 4);
+
+// compte à rebours
+for ( var compteur = 5 ; compteur >= 0 ; compteur -- ){
+console.log("rebours " + compteur);
+}
+
+// exemple d'application : parcourir les jours de la semaine
+var semaine = ["lundi","mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+
+for ( var i = 0 ; i < semaine.length ; i++ ){
+console.log("jour " + semaine[i]);
+}
+    </script>
+
+  </body>
+</html>

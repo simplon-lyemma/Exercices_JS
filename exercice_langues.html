@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>exercice js langues</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    var langues = ["fr", "es", "en", "ru", "it", "de"];
+    var bonjour = ["bonjour", "hola", "hi", "priviet", "buongiorno", "gutten tag"];
+    var reponse = ["merci", "gracias", "thank you", "spassiba", "grazie", "danke"];
+
+    var langueChoisie = prompt("Quelle langue souhaitez-vous ?\n fr\n es\n en\n ru\n it\n ");
+    // si je réponds fr: var langueChoisie = fr
+
+    var indexLangueChoisie = langues.indexOf(langueChoisie);
+    //var indexLangueChoisie = langues.indexOf(fr);
+    //var indexLangueChoisie = 0;
+
+
+
+    //console.log(langueChoisie)
+
+    console.log(bonjour[indexLangueChoisie]);
+    console.log(reponse[indexLangueChoisie]);
+    </script>
+
+  </body>
+</html>

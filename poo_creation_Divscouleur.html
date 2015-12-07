@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mail et mdp simple JS</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    // on définit notre variable
+
+var nouvellesDivs = [
+{couleur: "orange",
+ largeur: 50,
+ hauteur: 80,
+ texte: "orange"
+},
+ {couleur: "green",
+ largeur: 90,
+ hauteur: 30,
+ texte: "vert"
+},
+ {couleur: "pink",
+ largeur: 100,
+ hauteur: 60,
+ texte: "rose"
+},
+ {couleur: "blue",
+ largeur: 140,
+ hauteur: 60,
+ texte: "bleu"
+},
+];
+
+for(var i in nouvellesDivs){
+var newDivs = document.createElement("div");//on crée l'élément Div
+document.body.appendChild(newDivs); //crée un enfant attaché
+newDivs.style.backgroundColor = nouvellesDivs[i].couleur;
+newDivs.style.width = nouvellesDivs[i].largeur+"px";
+newDivs.style.height = nouvellesDivs[i].hauteur+"px";
+newDivs.textContent = nouvellesDivs[i].texte;
+}
+
+    </script>
+
+  </body>
+</html>

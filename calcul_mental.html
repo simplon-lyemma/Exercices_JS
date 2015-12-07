@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+  var operationHasard =Math.random();
+  var chiffre1=Math.floor(Math.random()*10);
+  var chiffre2=Math.floor(Math.random()*10);
+  if (operationHasard < 0.25)
+  {
+  var resultatAddition =prompt(chiffre1+"+"+chiffre2);
+  resultatAddition=Number(resultatAddition);
+  var resultatOrdi=Number(chiffre1) + Number(chiffre2);
+          if  (resultatOrdi === resultatAddition )
+          {
+          alert("bon resultat");
+          }
+          else
+          {
+          alert("mauvaise reponse");
+          }
+    }
+   else if   (operationHasard < 0.5)
+   {
+   var resultatSoustraction =prompt(chiffre1+"-"+chiffre2);
+     resultatSoustraction=Number(resultatSoustraction);
+       var resultatOrdiSous= chiffre1 - chiffre2;
+          if  (resultatOrdiSous === resultatSoustraction )
+          { alert("bon resultat");
+          }
+          else
+          {
+          alert("mauvaise reponse");
+           }
+   }
+  else if   (operationHasard < 0.75)
+            {
+            var resultatMultiplication =prompt(chiffre1+"*"+chiffre2);
+              resultatMultiplication=Number(resultatMultiplication);
+              var resultatOrdiMult= chiffre1 * chiffre2;
+            if  (resultatOrdiMult=== resultatMultiplication )
+            {
+             alert("bon resultat");
+            }
+            else
+            {
+            alert("mauvaise reponse");
+            }
+   }
+  else
+   {
+   var resultatDivision =prompt(chiffre1+"/"+chiffre2);
+     resultatDivision=Number(resultatDivision);
+     var resultatOrdiDiv= chiffre1 / chiffre2;
+            if  (resultatOrdiDiv === resultatDivision )
+            { alert("bon resultat");
+            }
+          else
+          { alert("mauvaise reponse");
+          }
+   }
+    </script>
+  </body>
+</html>

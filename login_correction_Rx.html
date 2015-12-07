@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+<script type="text/javascript">
+  var mailsValides = [  "toto@gmail.com", "titi@gmail.com", "titu@gmail.com", "tata@gmail.com" ];
+  var mdpValides = [  "12345", "54321", "98765", "67895" ];
+  var numTentativesMax = 3;
+  var numTentatives = 0;
+  function identifieUtilisateur(){
+    if( numTentatives >= numTentativesMax)
+    {
+      alert("trop d'erreurs");
+      return;
+    }
+    numTentatives ++;
+    var identifiantUtilisateur = prompt("quel est votre identifiant ?");
+    if( identifiantUtilisateur.indexOf('@') === -1 ){
+      alert( "email invalide");
+      identifieUtilisateur()
+    } else if(mailsValides.indexOf(identifiantUtilisateur) === -1){
+      var souhaitInscription = prompt("Compte inconnu, souhaitez vous vous inscrire O/N?");
+      if( souhaitInscription === "O" ){
+        mailsValides.push(identifiantUtilisateur);
+        var mdpNouvelUtilisateur = prompt("Choisissez un mot de passe");
+        mdpValides.push(mdpNouvelUtilisateur);
+        alert('bienvenue');
+        return;
+      } else {
+        identifieUtilisateur();
+      }
+    }
+    var mdpUtilisateur = prompt("quel est votre mdp ?");
+    var indexIdentifiantUtilisateur = mailsValides.indexOf(identifiantUtilisateur);
+    if( indexIdentifiantUtilisateur >= 0 ){
+        var indexMdpUtilisateur = mdpValides.indexOf(mdpUtilisateur);
+        if( indexMdpUtilisateur == indexIdentifiantUtilisateur ){
+          alert("bienvenue");
+        } else {
+          console.log("mdp incorrect");
+          identifieUtilisateur();
+        }
+    } else {
+      console.log("mail incorrect");
+      identifieUtilisateur();
+    }
+  }
+  identifieUtilisateur();
+</script>
+
+  </head>
+  <body>
+
+  </body>
+</html>

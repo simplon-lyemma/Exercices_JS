@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>formulaire</title>
+  <style>
+		label{
+		  text-align: center;
+			display: inline-block;
+			width:200px;
+		}
+		.alltop>*{
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+ <form id="logPass" action="#" method="get">
+
+	<fieldset>
+		<legend>Identification</legend>
+		<div><label for="ident">Identifiant</label><input id="ident" name="ident" type="text" placeholder="Saisissez votre identifiant"/></div>
+		<div><label for="mdp">Mot de passe</label><input id="mdp" name="mdp" type="text" placeholder="Saisissez votre mot de passe"/></div>
+	</fieldset>
+   <button onClick="afficheReponse()" type="button">validation JS</button>
+
+	<button type="submit">Valider</button>
+  </form>
+  <div id="Res"/>
+
+  <script type="text/javascript">
+       var idAttendu= "toto";
+       var mdpAttendu = "1234";
+	function afficheReponse() {
+            var f =   document.getElementById("logPass");
+         Res.textContent = f.ident.value + ' ' + f.mdp.value;
+         console.log("ident mdp" +f.ident.value + f.mdp.value);
+        if ((f.ident.value === idAttendu)&&(f.mdp.value === mdpAttendu )){
+        console.log("Bienvenue!");
+        }else{
+          console.log("identifiants inconnus");
+        }
+	}
+</script>
+</body>
+</html>

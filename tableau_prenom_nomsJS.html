@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tableau de noms et prénoms js</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    var listePrenoms = ["Marcel ", "Pablo ", "Vincent ", "Henri "];
+var listeNoms = ["Duchamp", "Picasso", "Van Gogh", "Matisse"];
+
+console.log(listePrenoms[0] + listeNoms[0]);
+console.log(listePrenoms[1] + listeNoms[1]);
+console.log(listePrenoms[2] + listeNoms[2]);
+console.log(listePrenoms[3] + listeNoms[3]);
+
+var nombreAuhasardEntre0Et3 = Math.floor(Math.random() * 4);
+var hasard = Math.floor(Math.random() * listePrenoms.length);
+
+console.log ("hasard: " + hasard);
+
+console.log (listePrenoms [hasard] + "" + listeNoms[hasard]);
+
+/* afficher un nom au hasard en mélangeant les noms prénoms pour qu'ils ne s'affichent pas à la ligne  */
+
+var hasard2 = Math.floor(Math.random() * listePrenoms.length);
+
+console.log(listePrenoms[hasard] + " " + listePrenoms[hasard2]);
+
+/* récupération de données saisies par l'utilisateur */
+
+var nouveauPrenom = prompt ("quel est le nouveau prénom ?");
+
+console.log("nouveauPrenom : " + nouveauPrenom );
+
+console.log("prenoms : " + listePrenoms);
+console.log("prenoms : " + listeNoms);
+
+var nouveauNom = prompt ("quel est le nouveau nom ?");
+
+console.log("nouveau Nom : " + nouveauNom );
+
+console.log("prenoms : " + listePrenoms);
+console.log("prenoms : " + listeNoms);
+    </script>
+
+  </body>
+</html>

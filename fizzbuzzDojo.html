@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo</title>
+    </head>
+
+    <body>
+
+
+        <script type="text/javascript">
+        for (var i=0; i<100 ; i++){
+if (i % 5 === 0){
+ if ( i %7 ===0){
+   console.log("fizzbuzz");
+ }
+ else {
+   console.log("buzz");
+ }
+}
+else if (i %7===0) {
+  console.log("fizz");
+}
+else {
+  console.log(i);
+}
+}
+        </script>
+    </body>
+</html>
+
+
+version2
+
+for (var i=0; i<100 ; i++){
+
+ if (i % 5 === 0){
+   if ( i %7 ===0){
+     console.log(i+" fizzbuzz");
+   }
+   else {
+     console.log(i+" buzz");
+   }
+ }
+  else {
+   if ( i %7 ===0){
+     console.log(i+" fizz");
+   }
+    else{
+      console.log(i);
+    }
+  }
+}

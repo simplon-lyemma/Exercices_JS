@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#conteneur{
+			text-align: center;
+			margin: 100px;
+		}
+	</style>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+	<div id="conteneur"></div>
+
+<script>
+
+	var photos = [
+		"http://i.ebayimg.com/00/$T2eC16hHJHgE9n0yHGLBBRY0mkvCKw~~_35.JPG",
+		"http://p4.storage.canalblog.com/48/26/1130541/88168912_p.jpg",
+		"http://www.robots-and-androids.com/images/wrex-the-dog.jpg"
+	];
+
+	function affichePhotos() {
+		var imgs = photos.map(function (imgURL, i) {
+			var img = document.createElement('img');
+			img.setAttribute('id', 'img' + i);
+			img.setAttribute('src', imgURL);
+			img.addEventListener('click', function (e) {
+				$("#img" + i).fadeOut();
+			});
+			return img;
+		});
+		imgs.forEach(function(img){
+			document.getElementById('conteneur').appendChild(img);
+			$("#"+img.getAttribute('id')).hide();
+			console.log("img.getAttribute('id')", img.getAttribute('id'));
+			$("#"+img.getAttribute('id')).fadeIn();
+		})
+	}
+
+	affichePhotos();
+
+</script>
+
+</body>
+</html>

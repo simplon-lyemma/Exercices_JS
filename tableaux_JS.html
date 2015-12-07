@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tableau en JS</title>
+  </head>
+  <body>
+      <script type="text/javascript">
+      var tableauVide = [];
+var tableauDePrenoms = ["Paul", "Jack", "Bob", "Toto"];
+var tableauDeNombres = [1 , 15 , 16 , 18, 21 ];
+var tableauDeTrucs = ["Jack", true, 0.2, false, 1];
+
+// contenu
+console.log( "prenoms " + tableauDePrenoms);
+
+// nombre
+console.log( "nombres de prenoms " + tableauDePrenoms.length );
+
+
+// accés
+console.log( tableauDePrenoms[0] );
+console.log( tableauDePrenoms[3] );
+console.log( tableauDePrenoms[tableauDePrenoms.length - 1] );
+
+// ajout
+tableauDePrenoms.push("Lili");
+console.log( tableauDePrenoms );
+
+// suppression
+tableauDePrenoms.splice( 2,1 );// supprimer 1 objet à partir de la position 2
+console.log( tableauDePrenoms );
+
+/*
+exercices jour de la semaine
+créer un tableau contenant les jours de la semaine
+et les afficher un par un dans la console
+*/
+var jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi",  "samedi", "dimanche"];
+
+console.log('nb de jours' + jours.length);
+
+console.log( "le 1er jour de la semaine est " + jours[0]);
+console.log( jours[1] );
+console.log( jours[2] );
+console.log( jours[3] );
+console.log( jours[4] );
+console.log( jours[5] );
+console.log( jours[6] );
+
+
+/*
+exemple 2 :  créez 2 tableaux :
+- le 1er contiendra 4 prénoms
+- le 2nd contiendra 4 noms
+afficher un par un le prenom et le nom à chaque position
+
+ensuite essayer d'afficher un des "prenom nom" au hasard ( Math.random() )
+*/
+var listePrenoms = ['lea', "luc", "bob", "zoé"];
+var listeNoms = ['Dupont', "Martin", "Petit", "Durand"];
+
+console.log(listePrenoms[0] + " " + listeNoms[0]);
+console.log(listePrenoms[1] + " " + listeNoms[1]);
+console.log(listePrenoms[2] + " " + listeNoms[2]);
+console.log(listePrenoms[3] + " " + listeNoms[3]);
+
+var nombreAuHasardEntre0Et3 = Math.floor(Math.random() * 4);
+var hasard = Math.floor(Math.random() * listePrenoms.length);
+
+console.log("hasard : " + hasard);
+console.log(listePrenoms[hasard] + " " + listeNoms[hasard]);
+
+// afficher un nom au hasard avec un prenom au hasard, sans qu'ils soient forcement à la même position
+// exemple Lea Petit
+var hasard2 = Math.floor(Math.random() * listePrenoms.length);
+
+console.log(listePrenoms[hasard] + " " + listeNoms[hasard2]);
+
+/* Recuperation de données saisies par l'utilisateur */
+
+var nouveauPrenom = prompt("quel est le nouveau prenom ?");
+console.log("nouveauPrenom : " + nouveauPrenom );
+
+// ajoutez le nouveau prenom au tableau prenom
+
+// demandez un nouveau nom
+
+// ajoutez le nouveau nom au tableau nom
+
+console.log("prenoms : " + listePrenoms);
+console.log("prenoms : " + listeNoms);
+
+// message "quelle langue souhaitez vous ? fr - es - en"
+// en fonction de la langue choisie bonjour / hola / Hi
+      </script>
+  </body>
+</html>

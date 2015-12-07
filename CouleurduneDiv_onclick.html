@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>changer la couleur d'une div</title>
+  <style>
+    div{
+      background-color:red;
+      width:200px;
+      height:30px;
+    }
+  </style>
+
+
+</head>
+<body>
+  <div id="boite"></div>
+  <button onclick="changeCouleur(0)">rouge</button>
+  <button onclick="changeCouleur(1)">vert</button>
+  <button onclick="changeCouleur(2)">bleu</button>
+  <button onclick="changeCouleur(3)">jaune</button>
+
+  <script type="text/javascript">
+/* attention Emma!!! Javascript ne lit pas le Français! lol*/
+   var couleurs = ["red", "green", "blue", "yellow"];
+    function changeCouleur(i){
+     document.getElementById("boite").style.backgroundColor = couleurs[i];
+    }
+  </script>
+</body>
+</html>
