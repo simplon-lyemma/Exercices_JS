@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Boite avec 2 boutons pour passer à un arrondi</title>
+
+    <style>
+    button{
+width:70px;
+height:40px;
+border-radius:8px;
+background-color:pink;
+color: grey;
+}
+
+#boite1{
+margin-top:10px;
+width:140px;
+height:140px;
+background-color: yellow;
+}
+
+.arrondi{
+border-radius:80px;
+}
+
+    </style>
+</head>
+<body>
+
+    <button type="button" onclick="arrondi()">arrondi</button>
+
+    <button type="button" onclick="droit()">droit</button>
+
+    <div id="boite1"></div>
+<script>
+
+function arrondi(){
+var boite =
+document.getElementById('boite1');
+boite.classList.add('arrondi');
+}
+
+function droit(){
+var boite = document.getElementById('boite1');
+boite.classList.remove('arrondi');
+}
+</script>
+
+</body>
+</html>

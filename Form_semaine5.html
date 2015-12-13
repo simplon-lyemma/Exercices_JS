@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Formulaire pré-rempli Nom Prenom Ville</title>
+  <!-- Exercice
+
+Une page HTML contient un formulaire constitué de 3 champs :
+
+prenom
+nom
+ville
+Au chargement de la page, on veut pré-remplir les champs du formulaires avec les données d'un objet JS
+https://github.com/Simplon-lyon/dev-web/wiki/semaine5
+
+-->
+  <style>
+  .alltop>*{
+    vertical-align: top;
+  }
+
+fieldset{
+  width: 50%;
+  border-radius: 9px;
+}
+
+label {
+  display:block;
+  float:left;
+  width:150px;
+  text-align:right;
+  padding:0 5px 0 0
+}
+
+button{
+  margin-left:155px;
+}
+/*redéfinir les label dans le css */
+  </style>
+</head>
+<body>
+
+    <form id="userForm">
+    <fieldset>
+      <legend>Formulaire</legend>
+
+        <div>
+        <label for="champNom">Nom</label>
+            <input id="champNom" type="text" name="nom" />
+        </div>
+
+        <div>
+          <!-- label permet d'avoir un champ cliquable -->
+        <label for="champPrenom">Prenom</label>
+            <input id="champPrenom" type="text" name="prenom" />
+        </div>
+
+        <div>
+        <label for="champVille">Ville</label>
+            <input id="champVille" type="text" name="ville" />
+        </div>
+            <button type="button" onclick="afficheInfo()">valider</button>
+          <!-- on place un écouteur d'évènement pour déclencher une réaction javascript -->
+      </form>
+</fieldset>
+
+  <!-- un tableau permet de regrouper plusieurs objets, chaque item est accessible via un index numérique -->
+
+<script type="text/javascript">
+var user = {
+    prenom:'bob',
+    nom:'Dupont',
+    ville:75001
+};
+
+// les éléments de formulaire ont une propriété value
+document.getElementById('champNom').value = user.nom;
+document.getElementById('champPrenom').value = user.prenom;
+document.getElementById('champVille').value = user.ville;
+
+/* on déclare une fonction*/
+
+function afficheInfo(){
+  var nouveauNom = document.getElementById('champNom').value;
+  user.nom = nouveauNom;
+//on peut aussi écrire user["nom"]=nouveauNom;
+//on lui passe une chaîne de caractères
+  console.log('nouveauNom', nouveauNom);
+
+  var nouveauPrenom = document.getElementById('champPrenom').value;
+  user.prenom = nouveauPrenom;
+  console.log('nouveauPrenom', nouveauPrenom);
+
+      var nouvelleVille = document.getElementById('champVille').value;
+  user.nouvelleVille = nouvelleVille;
+  console.log('nouvelleVille', nouvelleVille);
+
+  console.log('user', user);
+}
+</script>
+</body>
+</html>

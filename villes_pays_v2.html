@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr_FR">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercice Villes / Pays avec bouton suivant et précedent</title>
+	<style type="text/css">
+
+		body{
+			font-family: sans-serif;
+		}
+
+		.boitePays{
+			width:150px;
+			height:50px;
+			background-color: #CCC;
+			color:black;
+		}
+
+		.selected{
+			background-color: #6A0;
+			color:white;
+		}
+
+		#details{
+			margin:20px;
+			padding:20px;
+			background-color: #DFA;
+			margin:0 auto;
+			font-size: 1.3em;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div class="boitePays">France</div>
+		<div class="boitePays">Italie</div>
+		<div class="boitePays">Espagne</div>
+		<div class="boitePays">Portugal</div>
+	</div>
+
+	<div id="details">
+    <button id="btPrecedent" onclick="precedent()">Précédent</button>
+    <button id="btSuivant" onclick="suivant()">Suivant</button>
+		<div id="boiteNom" ></div>
+		<div id="boiteCapitale" ></div>
+
+	</div>
+
+	<script type="text/javascript">
+
+    var indexSelection = 0;
+
+		var pays = [
+			{ nom:'France' , capitale:'Paris'},
+			{ nom:'Italie' , capitale:'Rome'},
+			{ nom:'Espagne' , capitale:'Madrid'},
+			{ nom:'Portugal' , capitale:'Lisbonne'}
+		]
+
+    function suivant(){
+      indexSelection = indexSelection + 1;
+
+      if( indexSelection >= pays.length )
+        indexSelection=0;
+
+      afficheDetails(indexSelection);
+    }
+
+    function precedent(){
+      indexSelection = indexSelection - 1;
+
+      if( indexSelection < 0 )
+        indexSelection= pays.length-1;
+
+      afficheDetails(indexSelection);
+    }
+
+		function afficheDetails(indexPays){
+
+      document.getElementById('btSuivant').style.display = indexSelection >= pays.length-1
+        ? 'none' : 'inline' ;
+      /*if( indexSelection >= pays.length-1 )
+        document.getElementById('btSuivant').style.display='none';
+      else
+        document.getElementById('btSuivant').style.display='inline';
+        */
+      if( indexSelection == 0)
+        document.getElementById('btPrecedent').style.display='none';
+      else
+        document.getElementById('btPrecedent').style.display='inline';
+
+			var boites = document.getElementsByClassName("boitePays");
+      for (var i=0;i<boites.length;i++) {
+        boites[i].classList.remove("selected");
+      }
+      var bNom = document.getElementById("boiteNom");
+      var bCap = document.getElementById("boiteCapitale");
+      bNom.textContent = pays[indexPays].nom;
+      bCap.textContent = pays[indexPays].capitale;
+      boites[indexPays].classList.add("selected");
+		}
+
+    afficheDetails(indexSelection);
+
+	</script>
+
+</body>
+</html>

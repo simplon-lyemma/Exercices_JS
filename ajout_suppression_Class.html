@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ajout supression liste</title>
+</head>
+<body>
+  <button type="button" onclick="ajouteNombre()">Ajouter nombre</button>
+
+<ul id="maListe" />
+
+  <div>
+    <input id="champTache" />
+    <button type="button" onclick="ajouteTache()">Ajouter tache</button>
+  </div>
+  <ul id="listeTaches" />
+
+  <script>
+  function ajouteNombre(){
+  var liste = document.getElementById('maListe');
+  var li = document.createElement('li');
+  li.innerText = Math.random();
+  liste.appendChild(li);
+}
+
+function ajouteTache(){
+  var liste = document.getElementById('listeTaches');
+  var li = document.createElement('li');
+  var champ = document.getElementById('champTache');
+  li.innerText = champ.value;
+  liste.appendChild(li);
+  champ.value = '';
+}
+
+ajouteNombre();
+
+  </script>
+
+</body>
+</html>

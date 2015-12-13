@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>révision dom</title>
+    <style>
+      #box{
+        background-color: red;
+        width:40%;
+        height:200px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="box"> </div>
+    <button onclick="changeCouleur(0)"> bleu </button>
+    <button onclick="changeCouleur(1)"> vert </button>
+    <button onclick="changeCouleur(2)"> jaune </button>
+    <button onclick="changeCouleur(3)"> rose </button>
+    <button onclick="changeCouleur(4)"> rouge</button>
+    <button onclick="changeCouleur(5)"> noir </button>
+    <button onclick="changeCouleur(6)"> orange</button>
+
+
+  <script>
+  var couleurs = ["blue","green","yellow", "pink","red", "black", "orange"];
+  function changeCouleur(i){
+    document.getElementById("box").style.backgroundColor = couleurs[i];
+  }
+
+  </script>
+  </body>
+</html>
