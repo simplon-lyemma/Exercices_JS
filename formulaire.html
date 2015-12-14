@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>exercice formulaire ajout et suppression d'éléments</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+  <form id="formulaire">
+    <fieldset>
+      <legend> ajouter un utilisateur</legend>
+       <div class="form-group">
+    <input id="champNom" class="form-control" ></input>
+    <label for="champNom">Nom</label>
+       </div>
+
+     <div class="form-group">
+    <input id="champPrenom" class="form-control"></input>
+    <label for="champPrenom">Prenom</label>
+      </div>
+
+    <button type="button" class="btn btn-primary" onclick="ajoute()">ajouter</button>
+    </fieldset>
+  </form>
+  <ul id="maListe"></ul>
+
+<script type="text/javascript">
+
+var liste = document.getElementById('maListe');
+var li;
+var nouvellediv;
+var compteur = 0;
+var tableauContacts = [];
+// je fais un tableau vide
+
+function suppr(a, b){
+var idLi = document.getElementById("li"+a);
+// cibler l'id de la liste
+idLi.parentNode.removeChild(idLi);
+b.parentNode.removeChild(b);
+/* La méthode .splice()
+modifie le contenu d'un tableau en retirant des éléments et/ou en ajoutant des nouveaux éléments. */
+tableauContacts.splice(a,1);
+}
+
+function ajoute(){
+var prenom = document.getElementById('champPrenom');
+var nom = document.getElementById("champNom");
+var monObjet = {};
+li = document.createElement('li');
+liste.appendChild(li);
+li.id = "li"+compteur;
+
+nouvellediv = document.createElement('div');
+nouvellediv.innerHTML="<button type='button' class='btn btn-warning' onclick='suppr("+compteur+", this)'>x</button>";
+//<button type="button" class="btn btn-warning">Warning</button>
+
+//textcontent vs innerhtml
+liste.appendChild(nouvellediv);
+compteur ++;
+// truc.value pour récupérer une donnée rentrée dans un champ dans un formulaire
+monObjet.nom = nom.value;
+monObjet.prenom = prenom.value;
+tableauContacts.push(monObjet);
+// push pour ajouter des nouveaux contacts
+li.textContent = monObjet.nom + ' ' + monObjet.prenom;
+nom.value = " ";
+prenom.value = " ";
+}
+</script>
+
+</body>
+</html>

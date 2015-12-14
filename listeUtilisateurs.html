@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr_FR">
+<head>
+	<meta charset="UTF-8">
+	<title>exercice ajout suppression liste d'utilisateurs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- lien pour créer un formulair avec BOOTSTRAP
+http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-forms.php -->
+
+</head>
+<body>
+
+<div class="container" style="margin-top: 16px;">
+	<div class="row">
+		<div class="col-xs-6 col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Ajouter un utilisateur</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<form>
+							<div>
+								<label for="chpNom">Nom</label>
+								<input class="form-control" id="chpNom" type="text"/>
+							</div>
+							<div>
+								<label for="chpPrenom">Prenom</label>
+								<input class="form-control" id="chpPrenom" type="text"/>
+							</div>
+							<div style="margin-top: 16px;">
+								<button type="button" class="btn btn-primary" onclick="userManager.addUser()">Ajouter</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-8">
+			<ul id="liste">
+		<!--<li>
+			Jack Dupont
+			<button class="btn btn-warning" style="margin-left: 20px">X</button>
+		</li>-->
+	</ul>
+		</div>
+
+	</div>
+	<!--<ul>
+		<li>Jack Dupont
+			<button>X</button>
+		</li>
+	</ul>-->
+
+</div>
+
+
+<script>
+var users = [];
+
+function addUser()
+{
+var nom = document.getElementById('chpNom').value;
+var prenom = document.getElementById('chpPrenom').value;
+var user = { nom:nom, prenom:prenom };
+users.push(user);
+
+refreshView();
+}
+
+function refreshView(){
+var liste = document.getElementById('liste');
+liste.innerHTML = '';
+//liste.removeChildren();
+users.map(function(item){
+	var li = document.createElement('li');
+	var content = document.createTextNode(item.nom + ' ' + item.prenom );
+	var bt = document.createElement('button');
+	bt.addEventListener('click', removeUser);
+	bt.textContent = "X";
+	bt.classList.add('btn');
+	bt.info = {user:item};
+	li.appendChild(content);
+	li.appendChild(bt);
+
+	return li;
+	}).forEach(function(liElement){
+		liste.appendChild(liElement);
+});
+}
+
+function removeUser(event){
+var deletedUser = event.target.info.user;
+console.log('remove', event.target.info.user);
+users.splice( users.indexOf(deletedUser), 1 );
+console.log('users.length', users.length);
+
+refreshView();
+}
+
+</script>
+
+</body>
+</html>

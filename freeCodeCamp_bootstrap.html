@@ -1,0 +1,107 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice Bootstrap sur FreeCodeCamp</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+  <style>
+  h2 {
+    font-family: Lobster, Monospace;
+  }
+
+  .thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+  }
+  </style>
+
+
+  <div class="container-fluid">
+  <!--Pour que tout soit responsive on doit d'abord mettre un container-fluid -->
+    <div class="row">
+  <!-- étape 1: il faut toujours nester une div class="col-xs-6" dans une div class="row"-->
+      <div class="col-xs-8">
+        <h2 class="text-primary text-center">CatPhotoApp</h2>
+      </div>
+      <div class="col-xs-4">
+        <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat"></a>
+      </div>
+    </div>
+
+<!-- ********************** seconde image avec 3 boutons de différentes couleurs ********************** -->
+    <img src="http://bit.ly/fcc-running-cats" class="img-responsive">
+    <div class="row">
+      <div class="col-xs-4">
+        <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+      </div>
+      <div class="col-xs-4">
+        <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
+      </div>
+      <div class="col-xs-4">
+        <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
+      </div>
+    </div>
+    <p>Things cats <span class="text-danger">love:</span></p>
+<!-- ********************** liste à puces ********************** -->
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+<!-- ********************** liste numérotée ********************** -->
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+
+<!-- ********************** FORM ********************** -->
+    <div class="row">
+      <div class="col-xs-7">
+        <form action="/submit-cat-photo">
+          <div class="row">
+            <div class="col-xs-6">
+              <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+            </div>
+            <div class="col-xs-6">
+              <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+            </div>
+          </div>
+<!-- ********************** 3 checkboxes ********************** -->
+          <div class="row">
+            <div class="col-xs-4">
+              <label><input type="checkbox" name="personality"> Loving</label>
+            </div>
+            <div class="col-xs-4">
+              <label><input type="checkbox" name="personality"> Lazy</label>
+            </div>
+            <div class="col-xs-4">
+              <label><input type="checkbox" name="personality"> Crazy</label>
+            </div>
+          </div>
+          <input type="text" class="form-control" placeholder="cat photo URL" required>
+        </div>
+      </div>
+
+<!-- ********************** SUBMIT ********************** -->
+      <div class="row">
+        <div class="col-xs-5">
+          <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
+        </div>
+      </div>
+    </form>
+
+  </body>
+  </html>
