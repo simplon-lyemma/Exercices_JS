@@ -11,7 +11,7 @@
 			<!--
 				var motSecret;
 
-				var now=new Date();			// Date d'aujourd'hui
+				var now=new Date();
 				var tableauMot=new Array();	// Le tableau qui contient les lettres du mot à trouver
 				var mots=new Array();		// Le tableau qui contient tous les mots possibles
 
@@ -75,14 +75,14 @@
 
 						// Si on a raté 9 fois :
 						if(coupsManques==9){
-							alert("Dommage! C'est perdu !");
+							alert("Dommage. C'est perdu!!!\n Voulez vous refaire une partie ?");
 							for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
 							fini=true;
-							// on affiche le mot, on fini le jeu
+							// on affiche le mot, on termine le jeu
 						}
 					}
 					if(lettresTrouvees==tailleMot){
-						alert("Bravo ! C'est gagné !");
+						alert("Bravo!!! C'est gagné!!!");
 						fini=true;
 					}
 				}
@@ -102,7 +102,7 @@
 	<h1>LE JEU DU PENDU</h1>
 
 	<h2>Entrez une lettre grâce au clavier ci-dessous: <br />
-    si elle est dans le mot secret alors elle sera affichée!<br />
+    si elle est dans le mot-mystère, alors elle sera affichée!<br />
     sinon...vous serez pendu!!!</h2>
 
 	<table id="clavier">
