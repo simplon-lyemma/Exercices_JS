@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Clavier en Flex</title>
+<style>
+* {
+box-sizing: border-box;
+}
+tr {
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-flex-flow: row wrap;
+-ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+td {
+-webkit-box-flex: 1;
+-webkit-flex: 1;
+-ms-flex: 1;
+    flex: 1;
+min-width: 5em;
+}
+
+/* decoration */
+
+body {
+padding: 1em;
+color: #333;
+font-size: 1.2em;
+font-family: georgia, "trebuchet ms", arial, serif;
+}
+
+h1 {
+margin: 1em 0;
+color: #345;
+}
+.glossary-table {
+border-collapse: collapse;
+width: 100%;
+table-layout: fixed;
+border-top: 1px solid #999;
+}
+.glossary-table td {
+display: block;
+background: #F5F5F5;
+text-align: center;
+border-right: 1px solid #999;
+border-bottom: 1px solid #999;
+}
+.glossary-table {
+border-left: 1px solid #999;
+}
+.glossary-table td a {
+display: block;
+padding: 1em;
+color: #4c4c4c;
+text-decoration: none;
+}
+</style>
+
+</head>
+<body>
+  <h1>Clavier en flex</h1>
+
+<table class="glossary-table">
+	<tr>
+		<td><a href="#">ALL</a></td>
+		<td><a href="#">0-9</a></td>
+		<td><a href="#">A</a></td>
+		<td><a href="#">B</a></td>
+		<td><a href="#">C</a></td>
+		<td><a href="#">D</a></td>
+		<td><a href="#">E</a></td>
+		<td><a href="#">F</a></td>
+		<td><a href="#">G</a></td>
+		<td><a href="#">H</a></td>
+		<td><a href="#">I</a></td>
+		<td><a href="#">J</a></td>
+		<td><a href="#">K</a></td>
+		<td><a href="#">L</a></td>
+		<td><a href="#">M</a></td>
+		<td><a href="#">N</a></td>
+		<td><a href="#">O</a></td>
+		<td><a href="#">P</a></td>
+		<td><a href="#">Q</a></td>
+		<td><a href="#">R</a></td>
+		<td><a href="#">S</a></td>
+		<td><a href="#">T</a></td>
+		<td><a href="#">U</a></td>
+		<td><a href="#">V</a></td>
+		<td><a href="#">W</a></td>
+		<td><a href="#">X</a></td>
+		<td><a href="#">Y</a></td>
+		<td><a href="#">Z</a></td>
+	</tr>
+</table>
+
+</body>
+</html>
