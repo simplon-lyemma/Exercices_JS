@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Jeu de pendu en JS</title>
   </head>
-		<title>Jeu de pendu en JS</title>
+
 		<link rel=Stylesheet type="text/css" href=style.css>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 		<script language="JavaScript">
 			<!--
 				var motSecret;
@@ -46,12 +46,12 @@
 				// Gère tous les traitements à faire lorsqu'on appuie sur une touche
 				function proposer(element){
 
-					// Si la couleur de fond est lightgreen, c'est qu'on a déjà essayé - on quitte la fonction
-					if(element.style.backgroundColor=="lightGreen" ||fini) return;
+					// Si la couleur de fond est #8A2BE2, c'est qu'on a déjà essayé - on quitte la fonction
+					if(element.style.backgroundColor=="#8A2BE2" ||fini) return;
 
 					// On récupère la lettre du clavier et on met la touche en lightgreen (pour signaler qu'elle est cliquée)
 					var lettre=element.innerHTML;
-					changeCouleur(element,"lightGreen");
+					changeCouleur(element,"#8A2BE2");
 
 					// On met la variable trouve = false;
 					var trouve=false;
@@ -68,21 +68,22 @@
 
 					}
 
-					// Si la lettre n'est pas présente, trouvé vaut toujours false :
+					// Si la lettre n'est pas présente, trouvé = false :
 					if(!trouve){
 						coupsManques++;
-						document.images['pendu'].src="images/newimg/img"+coupsManques+".jpg"; // On change l'image du pendu
+						document.images['pendu'].src="images/newimg/img"+coupsManques+".jpg";
+            // On change l'image du pendu à chaque fois
 
 						// Si on a raté 9 fois :
 						if(coupsManques==9){
-							alert("Dommage! C'est perdu !");
+							alert("Dommage! C'est perdu!!!");
 							for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
 							fini=true;
-							// on affiche le mot, on fini le jeu
+							// on affiche le mot, on finit le jeu
 						}
 					}
 					if(lettresTrouvees==tailleMot){
-						alert("Bravo ! C'est gagné !");
+						alert("Bravo ! C'est gagné!!!");
 						fini=true;
 					}
 				}
@@ -101,10 +102,12 @@
 
 	<h1>LE JEU DU PENDU</h1>
 
-	<h2>Entrez une lettre grâce au clavier ci-dessous: <br />
-    si elle est dans le mot secret alors elle sera affichée!<br />
-    sinon...vous serez pendu!!!</h2>
+	<h2>Découvrez le mot mystère: <br />
+    cliquez sur le clavier pour inscrire les lettres du mot à trouver.</h2>
 
+
+
+<!-- tableau pour les lettres à cliquer-->
 	<table id="clavier">
 	 <tr>
 	  <td onclick="proposer(this);" >A</td>
@@ -151,7 +154,7 @@
 	</table>
 
   <br />
-	<a class="lien" href="javascript:location.reload();">Nouvelle partie</a>
+	<a class="lien" href="javascript:location.reload();">nouvelle partie</a>
 
 	<script language="javascript">
 		for(var i=0; i<tailleMot; i++) tableauMot[i]=document.getElementById(i);

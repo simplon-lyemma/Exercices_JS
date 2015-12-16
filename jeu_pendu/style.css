@@ -1,12 +1,12 @@
 
 #page {
-	background-color:fcd315;
-	border:1px solid black;
+	border:1px solid #D3D3D3;
 	text-align:left;
 	width:70%;
 	padding:30px;
-	height:500px;
-	font-family: 'Droid Sans', sans-serif;
+	border-radius: 2px;
+	height:530px;
+	font-family: 'PT Sans', sans-serif;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h2 {
 	padding:10px;
 	background-color:#D2CAEC;
 	border:1px inset grey;
-	border-radius: 2px;
+	border-radius: 4px;
 	width:30px;
 	height:30px;
 	font-weight:bold;
@@ -45,31 +45,37 @@ h2 {
 }
 
 #clavier{
-	border:3px outset grey;
+	border:3px outset #CFA0E9;
 	padding:10px;
-	border-radius: 3px;
-	background-color:#DCDCDC;
+	border-radius: 4px;
+	background-color:#CFA0E9;
 }
 
 #clavier td {
 	background-color:white;
 	border:1px solid black;
-	width:25px;
-	height:25px;
+	width:45px;
+	height:45px;
 	text-align:center;
 	font-weight:bold;
 	cursor:pointer;
 }
 
 .lien{
-	margin-top:90px;
-	color:#FF69B4;
-	text-decoration:none;
+  text-decoration:none;
+	color:violet;
+	border: 1px solid violet;
+	text-align: center;
+	padding-top:5px;
 	font-size:20px;
+	float: right;
+	height:40px;
+	width:150px;
 }
 
-a.lien:hover{
-	color:red;
+.lien:hover{
+	text-decoration: none;
+	color:pink;
 	font-weight:bold;
 	text-decoration:underline;
 }
